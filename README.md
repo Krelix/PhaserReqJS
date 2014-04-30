@@ -12,4 +12,4 @@ Start the server using `grunt connect` which will start a server on port 9000. Y
 
 - Include the physics engine for Phaser.
 - Merge PIXI and Phaser (can't use Phaser otherwise... Was mostly to figure out RequireJS)
-- 
+

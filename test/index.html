@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Phaser testing</title>
     <!-- Loading QUnit explicitly. See http://stackoverflow.com/a/17145597/3006460 -->
-    <link rel="stylesheet" href="./js/qunit.js" />
+    <link rel="stylesheet" href="./js/qunit.css" />
     <script src='./js/qunit.js'></script>
     <script>
         QUnit.config.autoload = false;
@@ -13,6 +13,7 @@
     <script data-main="./js/mainTest" src="/js/lib/requirejs/require.js"></script>
 </head>
 <body>
-<div id="qunit"/>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
 </body>
 </html>

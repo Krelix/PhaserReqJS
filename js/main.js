@@ -20,8 +20,14 @@ require.config({
 });
 
 require(['pixi', 'phaser', 'game'], function(PIXI, Phaser, Game){
+    // Clear automatic margins
+    document.body.style.margin = 0;
 
-    var myGame = new Game();
+    //var height = window.innerHeight || document.documentElement.clientHeight;
+    //var width = window.innerWidth || document.documentElement.clientWidth;
+    var width,
+        height;
 
+    window.myGame = new Game(width, height);
     myGame.start();
 });

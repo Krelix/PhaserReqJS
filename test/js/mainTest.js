@@ -21,5 +21,32 @@ require.config({
 });
 
 require(['pixi', 'phaser', 'game'], function(PIXI, Phaser, Game){
-    console.log('Loaded all');
+    // TODO: seperate in new files.
+    test('PIXI should be defined', function(){
+        ok(PIXI !== undefined, 'PIXI is defined.');
+    });
+    test('Phaser should be defined', function(){
+        ok(Phaser !== undefined, 'Phaser is defined');
+    });
+    test('Game should be defined', function(){
+        ok(Game !== undefined, 'Game is defined');
+    });
+    
+    var myGame = new Game();
+    test('myGame should be defined', function(){
+        ok(myGame instanceof Game, 'myGame was not created');
+    });
+
+    myGame.start();
+    asyncTest('Initialized game should create a canvas once START has been called.', function(){
+        expect(1);
+
+        setTimeout(function(){
+            ok(document.getElementsByTagName('canvas').length == 1, 'There is a canvas.');
+            start();
+        }, 1000);
+    });
+
+    QUnit.load();
+    QUnit.start();
 });

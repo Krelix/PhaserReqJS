@@ -2,7 +2,7 @@
  * @author brizarda
  * Class representign a Phaser Game.
  */
-define(['pixi', 'phaser'], function(PIXI, Phaser){
+define(['pixi', 'phaser', 'objects/player'], function(PIXI, Phaser, Player){
   'use strict';
 
   function Game(width, height){
@@ -56,7 +56,8 @@ define(['pixi', 'phaser'], function(PIXI, Phaser){
 
       ledge = this.platforms.create(-150, 250, 'ground');
       ledge.body.immovable = true;
-
+      
+      this.player = new Player(this.game);
     }
   };
 

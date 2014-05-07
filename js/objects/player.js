@@ -5,7 +5,7 @@
 define(function(){
   'use strict';
     
-  var Player = function(game){
+  function Player(game){
     console.log('initializing player');
     // Sprite initialization
     var playa = this.player = game.add.sprite(32, game.world.height - 150, 'dude');
@@ -19,12 +19,17 @@ define(function(){
     // Player animations
     playa.animations.add('left', [0, 1, 2, 3], 10, true);
     playa.animations.add('right', [5, 6, 7, 8], 10, true);
+
+    // Keep a reference to the game
+    this.game = game;
   };
   
   Player.prototype = {
     constructor: Player,
     update: function(){
-      console.log('calling player update');
+      console.log('Updating player.');
     }
   }
+
+  return Player;
 });

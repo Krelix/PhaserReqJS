@@ -17,7 +17,8 @@ define(['pixi', 'phaser', 'objects/player'], function(PIXI, Phaser, Player){
       console.log('starting a new game');
       this.game = new Phaser.Game(this.width, this.height, Phaser.CANVAS, '', {
         preload: this.preload,
-        create: this.create
+        create: this.create,
+        update: this.update
       });
     },
     preload: function() {
@@ -51,13 +52,15 @@ define(['pixi', 'phaser', 'objects/player'], function(PIXI, Phaser, Player){
 
       //  Now let's create two ledges
       var ledge = this.platforms.create(400, 400, 'ground');
-
       ledge.body.immovable = true;
 
       ledge = this.platforms.create(-150, 250, 'ground');
       ledge.body.immovable = true;
       
       this.player = new Player(this.game);
+    },
+    update: function() {
+      this.game.physics.arcade.collide(this.player.player, this.platforms);
     }
   };
 

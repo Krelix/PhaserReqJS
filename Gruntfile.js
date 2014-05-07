@@ -8,7 +8,7 @@ module.exports = function(grunt) {
             options: {
               keepalive: true,
               debug: false,
-              port: 9000,
+              port: 9001,
               protocol: 'http'
             }
           },
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             options: {
               keepalive:false,
               debug: false,
-              port: 9000,
+              port: 9001,
               protocol: 'http'
             }
           }
